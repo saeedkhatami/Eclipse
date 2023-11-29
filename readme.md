@@ -28,7 +28,7 @@ Welcome to **Eclipse**, a thrilling top-down bullet-hell roguelike that introduc
 
 To play **Eclipse**, follow these simple steps:
 
-1. **Download the game:** Visit [GitHub repository](https://github.com/saeedkhatami/Eclipse/releases) to download the latest release of Eclipse.
+1. **Download the game:** Visit [itch.io](https://saeedkhatami.itch.io/eclipse) to download the latest release of Eclipse.
 3. **Launch the game:** Open Eclipse and dive into the action-packed world of bullet-hell roguelike gameplay.
 
 ## Gameplay
