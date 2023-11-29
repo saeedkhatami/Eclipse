@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Doom Style Industrial Metal - Torn Flesh.mp3-bfe5ac14103056a78e9a2bedab4b9d8c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/Doom Style Industrial Metal - Torn Flesh.mp3"
+dest_files=[ "res://.import/Doom Style Industrial Metal - Torn Flesh.mp3-bfe5ac14103056a78e9a2bedab4b9d8c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,138 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scripts/SwapBar.gd" type="Script" id=1]
+[ext_resource path="res://Art/NewSwap.png" type="Texture" id=2]
+[ext_resource path="res://Art/Caution Tape3-export.png" type="Texture" id=3]
+[ext_resource path="res://Art/FilledBarWhite.png" type="Texture" id=4]
+[ext_resource path="res://Sounds/SoundEffects/Wub1.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/SoundEffects/warningbeep.wav" type="AudioStream" id=6]
+[ext_resource path="res://Art/swap_item_indicator.png" type="Texture" id=7]
+[ext_resource path="res://Shaders/Flash.tres" type="Material" id=8]
+[ext_resource path="res://Sounds/SoundEffects/ItemGet.wav" type="AudioStream" id=9]
+[ext_resource path="res://Art/swap_item_progress.png" type="Texture" id=10]
+[ext_resource path="res://Shaders/Noise.tres" type="Material" id=11]
+[ext_resource path="res://Art/Vignette.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Particles/HeavySparkParticles.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Sounds/SoundEffects/ElectricNoiseLoop.wav" type="AudioStream" id=14]
+[ext_resource path="res://Art/SwapBarMarker.png" type="Texture" id=15]
+
+[node name="SwapBar" type="TextureProgress"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 71.557
+margin_top = -67.6529
+margin_right = 71.5569
+margin_bottom = 12.3471
+rect_scale = Vector2( 0.75, 0.75 )
+max_value = 1000.0
+value = 296.0
+texture_over = ExtResource( 2 )
+texture_progress = ExtResource( 4 )
+tint_progress = Color( 0.584314, 0.0196078, 0.0196078, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+control_timer = 5.0
+
+[node name="ItemProgress" type="TextureProgress" parent="."]
+material = ExtResource( 8 )
+anchor_right = 0.205
+anchor_bottom = 0.2
+margin_left = 35.0
+margin_top = 8.0
+margin_right = 27.8
+margin_bottom = 2.0
+max_value = 300.0
+value = 300.0
+texture_progress = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="ItemProgress"]
+
+[node name="ItemDrop" type="TextureRect" parent="."]
+margin_left = 32.0
+margin_top = 5.0
+margin_right = 162.0
+margin_bottom = 21.0
+texture = ExtResource( 7 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="WarningAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -14.0
+
+[node name="UnlockedAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 2.0
+
+[node name="RisingAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -6.0
+
+[node name="Threshold" type="TextureProgress" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -4.0
+margin_right = 540.0
+margin_bottom = 36.0
+rect_scale = Vector2( 1.055, 1.1 )
+max_value = 1000.0
+texture_progress = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Static" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 1, 0.388235, 0.388235, 0 )
+material = ExtResource( 11 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sparks" parent="." instance=ExtResource( 13 )]
+position = Vector2( 554, 44 )
+z_index = 2
+local_coords = false
+
+[node name="ManiaMarker" type="Sprite" parent="."]
+modulate = Color( 0.501961, 0, 0, 1 )
+position = Vector2( 177, 70 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 15 )
+flip_v = true
+
+[node name="PatienceMarker1" type="Sprite" parent="."]
+modulate = Color( 1, 0.843137, 0, 1 )
+position = Vector2( 304.333, 20 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 15 )
+
+[node name="PatienceMarker2" type="Sprite" parent="."]
+modulate = Color( 1, 0.843137, 0, 1 )
+position = Vector2( 481.333, 20 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 15 )
+
+[node name="RevelryMarker" type="Sprite" parent="."]
+modulate = Color( 0.39, 0, 0.195, 1 )
+position = Vector2( 430, 70 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 15 )
+flip_v = true

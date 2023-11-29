@@ -1,0 +1,193 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Scripts/LevelSelect.gd" type="Script" id=1]
+[ext_resource path="res://Art/Fonts/Title.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Art/menubg-Sheet.png" type="Texture" id=3]
+[ext_resource path="res://Art/Environment/SkyRuinsImageSmall.PNG" type="Texture" id=4]
+[ext_resource path="res://Art/Environment/LabyrinthImageSmall.PNG" type="Texture" id=5]
+[ext_resource path="res://Scripts/AudioButton.gd" type="Script" id=6]
+[ext_resource path="res://Art/Fonts/DefaultSmall.tres" type="DynamicFont" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 640, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 1280, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 1920, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 2560, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 3200, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 3840, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 4480, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 5120, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 5760, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 6400, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 7040, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 7680, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 8320, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 8960, 0, 640, 360 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "bg",
+"speed": 10.0
+} ]
+
+[node name="LevelSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="AnimatedSprite" parent="."]
+position = Vector2( 320, 180 )
+frames = SubResource( 16 )
+animation = "bg"
+frame = 9
+playing = true
+
+[node name="Title" type="Label" parent="."]
+anchor_right = 0.998
+anchor_bottom = 0.35
+margin_right = -425.72
+margin_bottom = -72.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = ExtResource( 2 )
+text = "Level Select"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkyRuins" type="Button" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 141.99
+margin_top = -13.4811
+margin_right = 291.99
+margin_bottom = 91.5189
+script = ExtResource( 6 )
+
+[node name="SkyRuinsImageSmall" type="Sprite" parent="SkyRuins"]
+position = Vector2( 73, 61 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="SkyRuinsLabel" type="Label" parent="SkyRuins"]
+margin_right = 152.0
+margin_bottom = 24.0
+text = "Sky Ruins"
+align = 1
+
+[node name="SkyRuinsStats" type="Label" parent="SkyRuins"]
+margin_left = -0.999985
+margin_top = 105.0
+margin_right = 83.0
+margin_bottom = 129.0
+custom_fonts/font = ExtResource( 7 )
+text = "HIGH SCORE: 
+BEST TIME:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Labyrinth" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -298.658
+margin_top = -13.0511
+margin_right = -148.658
+margin_bottom = 91.9489
+script = ExtResource( 6 )
+
+[node name="LabyrinthImageSmall" type="Sprite" parent="Labyrinth"]
+position = Vector2( 75, 61 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+
+[node name="LabyrinthLabel" type="Label" parent="Labyrinth"]
+margin_left = 35.7165
+margin_top = 0.198425
+margin_right = 110.716
+margin_bottom = 25.1984
+text = "Labyrinth"
+align = 1
+
+[node name="LabyrinthStats" type="Label" parent="Labyrinth"]
+margin_top = 105.0
+margin_right = 84.0
+margin_bottom = 129.0
+custom_fonts/font = ExtResource( 7 )
+text = "HIGH SCORE:"
+
+[node name="Back" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_top = -30.0
+margin_right = 70.0
+margin_bottom = -9.99997
+text = "Back"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+pitch = 0.8
+
+[node name="HowTo" type="Button" parent="."]
+margin_left = 142.0
+margin_top = 132.0
+margin_right = 491.0
+margin_bottom = 152.0
+text = "How to Play"
+script = ExtResource( 6 )
